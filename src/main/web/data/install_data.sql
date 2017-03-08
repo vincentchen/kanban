@@ -1,0 +1,34 @@
+TRUNCATE TABLE privilege;
+INSERT INTO privilege (privilege_id,privilege_name,privilege_dec,privilege_define) VALUES(1,'KEY权限','后台','KeyPri');
+INSERT INTO privilege (privilege_id,privilege_name,privilege_dec,privilege_define) VALUES(2,'服务器配置权限','','ServicePri');
+INSERT INTO privilege (privilege_id,privilege_name,privilege_dec,privilege_define) VALUES(3,'服务器状态权限','','ServerPri');
+INSERT INTO privilege (privilege_id,privilege_name,privilege_dec,privilege_define) VALUES(4,'服务器子版块配置权限','','PluginPri');
+INSERT INTO privilege (privilege_id,privilege_name,privilege_dec,privilege_define) VALUES(5,'用户配置权限','','UserPri');
+INSERT INTO privilege (privilege_id,privilege_name,privilege_dec,privilege_define) VALUES(6,'用户信息管理','','UserInfoPri');
+INSERT INTO privilege (privilege_id,privilege_name,privilege_dec,privilege_define) VALUES(7,'组织机构配置权限','','OrgPri');
+INSERT INTO privilege (privilege_id,privilege_name,privilege_dec,privilege_define) VALUES(8,'组织机构信息管理','','OrgInfoPri');
+INSERT INTO privilege (privilege_id,privilege_name,privilege_dec,privilege_define) VALUES(9,'项目权限','','BusinessPri');
+INSERT INTO privilege (privilege_id,privilege_name,privilege_dec,privilege_define) VALUES(10,'项目管理权限','','ProPri');
+INSERT INTO privilege (privilege_id,privilege_name,privilege_dec,privilege_define) VALUES(11,'项目统计权限','','ProCntPri');
+INSERT INTO privilege (privilege_id,privilege_name,privilege_dec,privilege_define) VALUES(12,'创意管理权限','','IdeaPri');
+INSERT INTO privilege (privilege_id,privilege_name,privilege_dec,privilege_define) VALUES(13,'创意审核管理','','IdeaVerifyPri');
+INSERT INTO privilege (privilege_id,privilege_name,privilege_dec,privilege_define) VALUES(14,'求助管理','','HelpPri');
+INSERT INTO privilege (privilege_id,privilege_name,privilege_dec,privilege_define) VALUES(15,'求助信息管理','','HelpInfoPri');
+INSERT INTO privilege (privilege_id,privilege_name,privilege_dec,privilege_define) VALUES(16,'求助统计','','HelpCntPri');
+INSERT INTO privilege (privilege_id,privilege_name,privilege_dec,privilege_define) VALUES(17,'权限管理权限','','PriManager');
+INSERT INTO privilege (privilege_id,privilege_name,privilege_dec,privilege_define) VALUES(18,'权限信息管理权限','','PriInfo');
+INSERT INTO privilege (privilege_id,privilege_name,privilege_dec,privilege_define) VALUES(19,'权限配置管理权限','','PriConfig');
+INSERT INTO privilege (privilege_id,privilege_name,privilege_dec,privilege_define) VALUES(20,'角色管理权限','','RolePri');
+INSERT INTO privilege (privilege_id,privilege_name,privilege_dec,privilege_define) VALUES(21,'角色信息管理权限','','RoleInfoPri');
+INSERT INTO privilege (privilege_id,privilege_name,privilege_dec,privilege_define) VALUES(22,'消息中心权限','','MsgCenterPri');
+INSERT INTO privilege (privilege_id,privilege_name,privilege_dec,privilege_define) VALUES(23,'消息管理权限','','MsgInfo');
+INSERT INTO privilege (privilege_id,privilege_name,privilege_dec,privilege_define) VALUES(24,'广播权限','','MsgBroadcast');
+INSERT INTO privilege (privilege_id,privilege_name,privilege_dec,privilege_define) VALUES(25,'Client权限','','ClientPri');
+INSERT INTO privilege (privilege_id,privilege_name,privilege_dec,privilege_define) VALUES(26,'Client审批权限','','ClientFlowPri');
+INSERT INTO privilege (privilege_id,privilege_name,privilege_dec,privilege_define) VALUES(27,'Client创意权限','','ClientIdeaPri');
+INSERT INTO privilege (privilege_id,privilege_name,privilege_dec,privilege_define) VALUES(28,'Client项目权限','','ClientProPri');
+INSERT INTO privilege (privilege_id,privilege_name,privilege_dec,privilege_define) VALUES(29,'Client求助权限','','ClientHelpPri');
+INSERT INTO privilege (privilege_id,privilege_name,privilege_dec,privilege_define) VALUES(30,'Client交流权限','','ClientChatPri');
+
+
+INSERT INTO child_server_config (child_mark,child_field_name,child_field_value) VALUES('Idea','IdeaAudit',1);

@@ -1,0 +1,409 @@
+@CHARSET "UTF-8";
+.gantt{
+	border: 1px solid #09F;
+}
+
+
+.fn-gantt {
+	width: 100%;
+}
+
+.fn-gantt .fn-content {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+
+/* left panel */
+
+.fn-gantt .leftPanel {
+	float: left;
+	width: 25%;
+	overflow: hidden;
+	border-right: 1px solid #E5E5E5;
+	position: relative;
+	z-index: 20000;
+}
+
+.fn-gantt .row {
+	float: left;
+	height: 24px;
+	line-height: 24px;
+}
+.fn-gantt .leftPanel .label {
+	margin: 0 0 0 5px;
+}
+
+.fn-gantt .leftPanel .row0 {
+	border-top: 1px solid #E5E5E5;
+}
+.fn-gantt .leftPanel .name, .fn-gantt .leftPanel .desc {
+	float: left;
+	height: 23px;
+	margin: 0;
+	border-bottom: 1px solid #E5E5E5;
+	background-color: #f6f6f6;
+}
+ 
+.fn-gantt .leftPanel .name {
+	width: 50%;
+}
+ 
+.fn-gantt .leftPanel .desc {
+	width: 50%;
+}
+ 
+.fn-gantt .spacer
+{
+	margin: -2px 0 1px 0;
+	border-bottom: none;
+	background-color: #f6f6f6;
+}
+
+/* right panel */
+
+.fn-gantt .rightPanel {
+	float: left;
+	width: 75%;
+	margin-left:-1px;
+	overflow: hidden;
+}
+
+.fn-gantt .dataPanel {
+	margin-left: 0px;
+	border-right: 1px solid #DDD;
+	position: relative;
+}
+
+.fn-gantt .dataPanel:after {
+   content: ".";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
+
+.fn-gantt .day {
+	overflow: visible;
+	width: 24px;
+	line-height: 24px;
+	text-align: center;
+	border-left: 1px solid #DDD;
+	border-bottom: 1px solid #DDD;
+	margin: -1px 0 0 -1px;
+} 
+
+.fn-gantt .today {
+	background-color: #e2ebff;
+	height: 23px;
+	margin: 0 0 -1px -1px;
+}
+
+.fn-gantt .sa, .fn-gantt .sn, .fn-gantt .wd {
+	height: 23px;
+	margin: 0 0 0 -1px;
+}
+
+.fn-gantt .sa {
+	background-color: #eeeeee;
+}
+
+.fn-gantt .sn {
+	background-color: #eeeeee;
+}
+
+.fn-gantt .wd {
+	background-color: #f6f6f6;
+}
+
+.fn-gantt .rightPanel .month, .fn-gantt .rightPanel .year {
+	float: left;
+	overflow: hidden;
+	border-left: 1px solid #DDD;
+	border-bottom: 1px solid #DDD;
+	height: 23px;
+	margin: 0 0 0 -1px;
+	background-color: #f6f6f6; 	
+}
+
+.fn-gantt-hint {
+	border: 1px solid #09F;
+	background-color: #FFF;
+    border-radius: 3px; 
+    padding: 3px;
+	position:absolute;
+	display: none;
+    z-index: 10003;
+	box-shadow: 0 -1px 0 rgba(0, 0, 0, .3), inset 0 1px 2px
+		rgba(0, 0, 0, .1), 0 0 10px rgba(0, 153, 255, .6);
+}
+
+.fn-gantt .bar {
+	border: none;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;   
+    background-color: #89c5f8;
+	-webkit-box-shadow: 1px 1px 1px 0px #333;
+	box-shadow: 1px 1px 1px 0px #333;
+    height: 18px;
+    margin: 4px 3px 3px 3px;
+    position: absolute;
+    z-index: 10000;
+}
+
+.fn-gantt .bar .label {
+	line-height: 18px;
+	font-weight: bold;
+}
+
+.fn-gantt .ganttRed {
+	background-color: #8F0000;
+}
+
+.fn-gantt .ganttGreen {
+	background-color: #b3cf6f;
+}
+
+.fn-gantt .ganttOrange {
+	background-color: #ff7e24;
+}
+
+.fn-gantt .depLine {
+	background-color: transparent;
+	position: absolute;
+	z-index: 9999;
+}
+
+.fn-gantt .depLineSh {
+	margin-top: 2px;
+	margin-left: 2px;
+	opacity: 0.3;
+}
+
+.fn-gantt .depStart, .fn-gantt .depEnd {
+	position: absolute;
+	width: 5px;
+	height: 5px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	border: 2px solid #fff;
+	-webkit-box-shadow: 1px 1px 1px 0px #444;
+	box-shadow: 1px 1px 1px 0px #444;
+	z-index: 10001;
+}
+
+/* bottom (navigation) */
+
+.fn-gantt .bottom {
+	clear: both;
+	background-color: #f6f6f6;
+	width: 100%;
+}
+.fn-gantt .navigate {
+	text-align: center;
+	border-top: 1px solid #DDD;
+}
+
+.fn-gantt .navigate .nav-slider {
+	width: 390px;
+	height:40px;
+	line-height:40px;
+	display: inline-block;
+}
+
+.fn-gantt .navigate .nav-slider-left, .fn-gantt .navigate .nav-slider-right {
+	text-align: center;
+	height: 20px;
+	display: inline-block;	
+}
+
+.fn-gantt .navigate .nav-slider-left {
+	float: left;
+}
+
+.fn-gantt .navigate .nav-slider-right {
+	float: right;
+
+}
+
+.fn-gantt .navigate .nav-slider-content {
+	text-align: left;
+	width: 160px;
+	height: 20px;
+	display: inline-block;
+	padding: 10px;
+	margin: 0;
+}
+
+.fn-gantt .navigate .nav-slider-bar, .fn-gantt .navigate .nav-slider-button {
+	position: absolute;
+	display: inline-block;	
+}
+
+.fn-gantt .navigate .nav-slider-bar {
+	background: #f6f8f9;
+	background: -moz-linear-gradient(top, #f6f8f9 0%, #e5ebee 50%, #d7dee3 51%, #f5f7f9 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f6f8f9), color-stop(50%,#e5ebee), color-stop(51%,#d7dee3), color-stop(100%,#f5f7f9));
+	background: -webkit-linear-gradient(top, #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%);
+	background: -o-linear-gradient(top, #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%);
+	background: -ms-linear-gradient(top, #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%);
+	background: linear-gradient(to bottom, #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%);
+		
+	 -khtml-border-radius: 8px;
+	   -moz-border-radius: 8px;
+	    -ms-border-radius: 8px;
+	     -o-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	        border-radius: 8px;
+	
+	-khtml-box-shadow: 0 1px 0 #fff, inset 0 0 2px #3f4c6b, inset 0 1px 0 #d7dee3, inset 0 1px 5px #d7dee3;
+	   -moz-box-shadow: 0 1px 0 #fff, inset 0 0 2px #3f4c6b, inset 0 1px 0 #d7dee3, inset 0 1px 5px #d7dee3;
+	    -ms-box-shadow: 0 1px 0 #fff, inset 0 0 2px #3f4c6b, inset 0 1px 0 #d7dee3, inset 0 1px 5px #d7dee3;
+	     -o-box-shadow: 0 1px 0 #fff, inset 0 0 2px #3f4c6b, inset 0 1px 0 #d7dee3, inset 0 1px 5px #d7dee3;
+	-webkit-box-shadow: 0 1px 0 #fff, inset 0 0 2px #d7dee3, inset 0 1px 0 #d7dee3, inset 0 1px 5px #d7dee3;
+	        box-shadow: 0 1px 0 #fff, inset 0 0 2px #d7dee3, inset 0 1px 0 #d7dee3, inset 0 1px 5px #d7dee3;
+	
+	display: block;
+	float: left;
+	height: 7px;
+	position: relative;
+	width: 150px;
+	margin: 5px 0 5px 0;
+}
+
+.fn-gantt .navigate .nav-slider-button {
+	background: #ffffff;
+	background: -moz-radial-gradient(center, ellipse cover, #ffffff 0%, #fefefe 50%, #fdfdfd 51%, #ffffff 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ffffff), color-stop(50%,#fefefe), color-stop(51%,#fdfdfd), color-stop(100%,#ffffff));
+	background: -webkit-radial-gradient(center, ellipse cover, #ffffff 0%,#fefefe 50%,#fdfdfd 51%,#ffffff 100%);
+	background: -o-radial-gradient(center, ellipse cover, #ffffff 0%,#fefefe 50%,#fdfdfd 51%,#ffffff 100%);
+	background: -ms-radial-gradient(center, ellipse cover, #ffffff 0%,#fefefe 50%,#fdfdfd 51%,#ffffff 100%);
+	background: radial-gradient(ellipse at center, #ffffff 0%,#fefefe 50%,#fdfdfd 51%,#ffffff 100%);
+
+	 -khtml-border-radius: 10px;
+	   -moz-border-radius: 10px;
+	    -ms-border-radius: 10px;
+	     -o-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	        border-radius: 10px;
+	
+	
+	 -khtml-box-shadow: 0 1px 1px #65727b, 0 0 1px #b6bdc2;
+	   -moz-box-shadow: 0 1px 1px #65727b, 0 0 1px #b6bdc2;
+	    -ms-box-shadow: 0 1px 1px #65727b, 0 0 1px #b6bdc2;
+	     -o-box-shadow: 0 1px 1px #65727b, 0 0 1px #b6bdc2;
+	-webkit-box-shadow: 0 1px 1px #65727b, 0 0 1px #b6bdc2;
+	        box-shadow: 0 1px 1px #65727b, 0 0 1px #b6bdc2;
+	
+	display: block;
+	float: left;
+	width: 14px;
+	height: 14px;
+	position: relative;
+	top: -2px;
+	
+	z-index: 1;
+	
+	margin: -2px 0 0 0;	
+	cursor: pointer;
+}
+
+.fn-gantt .navigate .page-number {
+	display: inline-block;
+	font-size: 10px;
+}
+
+.fn-gantt .navigate .page-number span {
+	color: #666666;
+	position: relative;
+	
+}
+
+.fn-gantt .navigate a:link, .fn-gantt .navigate a:visited, .fn-gantt .navigate a:active {
+	text-decoration: none;
+}
+
+.fn-gantt .nav-link {
+	margin: 0px 0px 8px 0px;
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	font-size: 0px;
+}
+
+.fn-gantt .navigate .nav-page-back {
+	background-image: url(../image/up.png);
+}
+
+.fn-gantt .navigate .nav-page-next {
+	background-image: url(../image/down.png);
+	margin-right: 15px;
+}
+
+.fn-gantt .navigate .nav-slider .nav-page-next {
+	margin-right: 5px;
+}
+ 
+
+.fn-gantt .navigate .nav-begin {
+	background-image: url(../image/begin.png);
+}
+
+.fn-gantt .navigate .nav-prev-week {
+	background-image: url(../image/rewind.png);
+}
+
+.fn-gantt .navigate .nav-prev-day {
+	background-image: url(../image/prev_one.png);
+}
+
+.fn-gantt .navigate .nav-next-day {
+	background-image: url(../image/next_one.png);
+}
+
+.fn-gantt .navigate .nav-next-week {
+	background-image: url(../image/fastforward.png);
+}
+
+.fn-gantt .navigate .nav-end {
+	background-image: url(../image/end.png);
+}
+
+.fn-gantt .navigate .nav-zoomOut {
+	background-image: url(../image/magnifier_zoom_out.png);
+}
+
+
+.fn-gantt .navigate .nav-zoomIn {
+	background-image: url(../image/magnifier_zoom_in.png);
+}
+
+
+.fn-gantt .navigate .nav-now {
+	background-image: url(../image/clock.png);
+}
+
+.fn-gantt .navigate .nav-slider .nav-now {
+	margin-right: 5px;
+}
+
+.fn-gantt-loader {
+	background-image: url(../image/loader-bg.png);
+    z-index: 30000;
+}
+
+.fn-gantt-loader-spinner {
+	width: 100px;
+	height: 20px;
+	position: absolute;
+	margin-left: 50%;
+	margin-top: 50%;
+	text-align: center;
+}
+.fn-gantt-loader-spinner span {
+	color: #fff;
+	font-size: 12px;
+	font-weight: bold;
+}

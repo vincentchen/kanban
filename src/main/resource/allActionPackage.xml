@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="SystemInstall" namespace="/install" extends="struts-default">
+		<default-action-ref name="index" />
+		<action name="index">
+			<result>/install/install.jsp</result>
+		</action>
+		<action name="System*" class="com.idealism.kanban.action.System{1}Action" method="{1}">
+		</action>
+	</package>
+	
+	<package name="Admin" namespace="/admin" extends="System">
+		<default-action-ref name="index" />
+		<action name="index">
+			<result>/admin/index.jsp</result>
+		</action>
+		<action name="AdminTitle" class="com.idealism.kanban.action.admin.AdminTitleAction" method="Title">
+			<result name="title">/admin/title.jsp</result>
+		</action>
+		<action name="AdminDesktop" class="com.idealism.kanban.action.admin.AdminDesktopAction" method="Desktop">
+			<result name="desktop">/admin/desktop.jsp</result>
+		</action>
+		<action name="AdminUser*" class="com.idealism.kanban.action.admin.AdminUserAction" method="{1}">
+			<result name="list">/admin/user_list.jsp</result>
+			<result name="edit">/admin/user_edit.jsp</result>
+			<result name="view">/admin/user_view.jsp</result>
+			<result name="pri">/admin/user_pri.jsp</result>
+			<result name="history">/admin/user_history.jsp</result>
+			<result name="reldept">/admin/user_reldept.jsp</result>
+		</action>
+		<action name="AdminDept*" class="com.idealism.kanban.action.admin.AdminDeptAction" method="{1}">
+			<result name="list">/admin/dept_list.jsp</result>
+		</action>
+		<action name="AdminRelDeptUser*" class="com.idealism.kanban.action.admin.AdminRelDeptUser" method="{1}">
+		</action>
+		<action name="AdminProject*" class="com.idealism.kanban.action.admin.AdminProjectAction" method="{1}">
+			<result name="list">/admin/project_list.jsp</result>
+			<result name="edit">/admin/project_edit.jsp</result>
+			<result name="view">/admin/project_view.jsp</result>
+			<result name="download">/admin/project_download.jsp</result>
+			<result name="ranjintu">/admin/project_ranjintu.jsp</result>
+			<result name="history">/admin/project_history.jsp</result>
+			<result name="users">/admin/project_users.jsp</result>
+			<result name="graph">/admin/project_graph.jsp</result>
+			<result name="history">/admin/project_history.jsp</result>
+			<result name="cnt">/admin/project_cnt.jsp</result>
+			<result name="search">/admin/project_search.jsp</result>
+		</action>
+		<action name="AdminProTarget*" class="com.idealism.kanban.action.admin.AdminProTargetAction" method="{1}">
+			<result name="view">/admin/protarget_view.jsp</result>
+			<result name="edit">/admin/protarget_edit.jsp</result>
+			<result name="list">/admin/protarget_list.jsp</result>
+			<result name="task">/admin/protarget_task.jsp</result>
+			<result name="download">/admin/protarget_download.jsp</result>
+			<result name="graph">/admin/protarget_graph.jsp</result>
+			<result name="history">/admin/protarget_history.jsp</result>
+			<result name="noSession">/error.jsp?errorcode=noSession</result>
+		</action>
+		<action name="AdminProTask*" class="com.idealism.kanban.action.admin.AdminProTaskAction" method="{1}">
+			<result name="view">/admin/protask_view.jsp</result>
+			<result name="edit">/admin/protask_edit.jsp</result>
+			<result name="noRead">/error.jsp?errorcode=noRead</result>
+			<result name="canNotOperate">/error.jsp?errorcode=canNotOperate</result>
+			<result name="download">/admin/protask_download.jsp</result>
+		</action>
+		<action name="AdminPrivilege*" class="com.idealism.kanban.action.admin.AdminPrivilegeAction" method="{1}">
+			<result name="list">/admin/privilege_list.jsp</result>
+			<result name="custom">/admin/privilege_custom.jsp</result>
+			<result name="edit">/admin/privilege_edit.jsp</result>
+		</action>
+		<action name="AdminRole*" class="com.idealism.kanban.action.admin.AdminRoleAction" method="{1}">
+			<result name="list">/admin/role_list.jsp</result>
+			<result name="pri">/admin/role_pri.jsp</result>
+		</action>
+		<action name="AdminHelp*" class="com.idealism.kanban.action.admin.AdminHelpAction" method="{1}">
+			<result name="list">/admin/help_list.jsp</result>
+			<result name="edit">/admin/help_edit.jsp</result>
+			<result name="view">/admin/help_view.jsp</result>
+			<result name="download">/admin/help_download.jsp</result>
+			<result name="cnt">/admin/help_cnt.jsp</result>
+			<result name="search">/admin/help_search.jsp</result>
+		</action>
+		<action name="AdminIdea*" class="com.idealism.kanban.action.admin.AdminIdeaAction" method="{1}">
+			<result name="view">/admin/idea_view.jsp</result>
+			<result name="list">/admin/idea_list.jsp</result>
+			<result name="edit">/admin/idea_edit.jsp</result>
+			<result name="download">/admin/idea_download.jsp</result>
+			<result name="search">/admin/idea_search.jsp</result>
+		</action>
+		<action name="AdminMsg*" class="com.idealism.kanban.action.admin.AdminMsgAction" method="{1}">
+			<result name="list">/admin/msg_list.jsp</result>
+			<result name="view">/admin/msg_view.jsp</result>
+			<result name="search">/admin/msg_search.jsp</result>
+			<result name="broadcast">/admin/msg_broadcast.jsp</result>
+		</action>
+		<action name="AdminServer*" class="com.idealism.kanban.action.admin.AdminServerAction" method="{1}">
+			<result name="status">/admin/server_status.jsp</result>
+			<result name="plugin">/admin/server_plugin.jsp</result>
+		</action>
+	</package>
+	
+	<package name="default" namespace="/" extends="System">
+		<default-action-ref name="index" />
+		<action name="index">
+			<result type="redirectAction">IndexGetHomePage</result>
+		</action>
+		<action name="Index*" class="com.idealism.kanban.action.IndexAction" method="{1}">
+			<result name="success">/index.jsp</result>
+		</action>
+		<action name="Login*" class="com.idealism.kanban.action.LoginAction" method="{1}">
+			<result name="admin">/admin/index.jsp</result>
+			<result name="out">/login.jsp</result>
+		</action>
+		<action name="DeskTop*" class="com.idealism.kanban.action.DeskTopAction" method="{1}">
+			<result>/desktop.jsp</result>
+		</action>
+		<action name="Title*" class="com.idealism.kanban.action.TitleAction" method="{1}">
+			<result>/title.jsp</result>
+		</action>
+		<action name="User*" class="com.idealism.kanban.action.UserAction" method="{1}">
+			<result name="panel">/user_panel.jsp</result>
+			<result name="setting">/user_setting.jsp</result>
+			<result name="search">/user_search.jsp</result>
+		</action>
+		<action name="ProTask*" class="com.idealism.kanban.action.ProTaskAction" method="{1}">
+			<result name="edit">/protask_edit.jsp</result>
+			<result name="noRead">/error.jsp?errorcode=noRead</result>
+			<result name="canNotOperate">/error.jsp?errorcode=canNotOperate</result>
+			<result name="download">/protask_download.jsp</result>
+			<result name="view">/protask_view.jsp</result>
+		</action>
+		<action name="Project*" class="com.idealism.kanban.action.ProjectAction" method="{1}">
+			<result name="list">/project_list.jsp</result>
+			<result name="description">/project_des.jsp</result>
+			<result name="view">/project_view.jsp</result>
+			<result name="download">/project_download.jsp</result>
+			<result name="ranjintu">/project_ranjintu.jsp</result>
+			<result name="history">/project_history.jsp</result>
+			<result name="users">/project_users.jsp</result>
+			<result name="graph">/project_graph.jsp</result>
+			<result name="history">/project_history.jsp</result>
+			<result name="search">/project_search.jsp</result>
+		</action>
+		<action name="ProTarget*" class="com.idealism.kanban.action.ProTargetAction" method="{1}">
+			<result name="view">/protarget_view.jsp</result>
+			<result name="edit">/protarget_edit.jsp</result>
+			<result name="list">/protarget_list.jsp</result>
+			<result name="view">/protarget_view.jsp</result>
+			<result name="panel">/protarget_panel.jsp</result>
+			<result name="task">/protarget_task.jsp</result>
+			<result name="download">/protarget_download.jsp</result>
+			<result name="graph">/protarget_graph.jsp</result>
+			<result name="history">/protarget_history.jsp</result>
+			<result name="noSession">/error.jsp?errorcode=noSession</result>
+		</action>
+		<action name="SystemFiles*" class="com.idealism.kanban.action.SystemFilesAction" method="{1}">
+		</action>
+		<action name="Idea*" class="com.idealism.kanban.action.IdeaAction" method="{1}">
+			<result name="view">/idea_view.jsp</result>
+			<result name="list">/idea_list.jsp</result>
+			<result name="edit">/idea_edit.jsp</result>
+			<result name="download">/idea_download.jsp</result>
+			<result name="search">/idea_search.jsp</result>
+		</action>
+		<action name="Help*" class="com.idealism.kanban.action.HelpAction" method="{1}">
+			<result name="list">/help_list.jsp</result>
+			<result name="edit">/help_edit.jsp</result>
+			<result name="view">/help_view.jsp</result>
+			<result name="download">/help_download.jsp</result>
+			<result name="search">/help_search.jsp</result>
+		</action>
+		<action name="Msg*" class="com.idealism.kanban.action.MsgAction" method="{1}">
+			<result name="list">/msg_list.jsp</result>
+			<result name="view">/msg_view.jsp</result>
+			<result name="search">/msg_search.jsp</result>
+		</action>
+	</package>
+</struts>

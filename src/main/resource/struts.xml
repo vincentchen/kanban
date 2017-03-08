@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+	<constant name="struts.i18n.encoding" value="utf-8" />
+	<constant name="struts.serve.static.browserCache" value="false" />
+	<constant name="struts.configuration.xml.reload" value="true" />
+	<constant name="struts.custom.i18n.resources" value="message,error"></constant>
+	<!-- 动态方法调用，为true时，就可以在struts.xml配置“*”的通配符，来调用action里的方法 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<!-- 开发模式 -->
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.multipart.saveDir" value="/tmp" />
+	<constant name="struts.ui.theme" value="simple" />
+	<!-- 在struts.xml声明,action交给spring3.x托管 -->
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.multipart.maxSize" value="1024000000" />
+	<!-- 默认后缀名 -->
+	<constant name="struts.action.extension" value="do,action,jhtml,," />
+	<!-- Struts Annotation -->
+	<constant name="actionPackages" value="com.idealism.kanban.action" />
+
+	<package name="System" namespace="/" extends="struts-default">
+		<interceptors>
+			<!-- 定义程序安装拦截器 -->
+			<interceptor name="installInterceptor" class="com.idealism.kanban.action.interceptor.InstallInterceptor">
+    		</interceptor>
+   	 		<!-- 定义权限拦截器 -->
+    		<interceptor name="privilegeInterceptor" class="com.idealism.kanban.action.interceptor.PrivilegeInterceptor">
+    			<!-- 登录方法不需要拦截，放行 -->
+    			<param name="excludeMethods">CheckIn,LoginOut,SavePWD</param>
+    			<param name="excludeParams">Introduction*</param>
+    		</interceptor>
+    		<!-- 定义登录拦截器 -->
+    		<interceptor name="HttpSessionInterceptor" class="com.idealism.kanban.action.interceptor.HttpSessionInterceptor">
+    			<!-- 登录方法不需要拦截，放行 -->
+    			<param name="excludeMethods">CheckIn,LoginOut,SavePWD</param>
+    			<param name="excludeParams">Introduction*</param>
+    		</interceptor>
+    		<!-- 定义系统拦截器栈 -->
+    		<interceptor-stack name="systemInterceptor">
+    			<!-- 先应用struts提供的默认拦截器 -->
+    			<interceptor-ref name="defaultStack" />
+    			<!-- 再应用自定义的权限拦截器 -->
+    			<interceptor-ref name="installInterceptor" />
+    			<interceptor-ref name="privilegeInterceptor" />
+    			<interceptor-ref name="HttpSessionInterceptor" />
+    		</interceptor-stack>
+    	</interceptors>
+    	<!-- 定义系统默认拦截器，今后让其它所有的包继承system包即可获得权限拦截。 -->
+    	<default-interceptor-ref name="systemInterceptor" />
+    	<global-results>
+    		<result>/index.jsp</result>
+    		<result name="install">/install/install.jsp</result>
+    		<result name="noLogin">/login.jsp</result>
+    		<result name="noPWD">/reset.jsp</result>
+    		<result name="noPrivilege">/nopri.jsp</result>
+    		<result name="noPriByAjax">/nopri_ajax.jsp</result>
+    	</global-results>
+	</package>
+	<include file="allActionPackage.xml" />
+</struts>

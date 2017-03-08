@@ -1,0 +1,90 @@
+.toggle-bg{
+	background: #f6f8f9;
+	background: -moz-linear-gradient(top, #f6f8f9 0%, #e5ebee 50%, #d7dee3 51%, #f5f7f9 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f6f8f9), color-stop(50%,#e5ebee), color-stop(51%,#d7dee3), color-stop(100%,#f5f7f9));
+	background: -webkit-linear-gradient(top, #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%);
+	background: -o-linear-gradient(top, #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%);
+	background: -ms-linear-gradient(top, #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%);
+	background: linear-gradient(to bottom, #f6f8f9 0%,#e5ebee 50%,#d7dee3 51%,#f5f7f9 100%);
+		
+	 -khtml-border-radius: 8px;
+	   -moz-border-radius: 8px;
+	    -ms-border-radius: 8px;
+	     -o-border-radius: 8px;
+	-webkit-border-radius: 8px;
+	        border-radius: 8px;
+	
+	-khtml-box-shadow: 0 1px 0 #fff, inset 0 0 2px #3f4c6b, inset 0 1px 0 #d7dee3, inset 0 1px 5px #d7dee3;
+	   -moz-box-shadow: 0 1px 0 #fff, inset 0 0 2px #3f4c6b, inset 0 1px 0 #d7dee3, inset 0 1px 5px #d7dee3;
+	    -ms-box-shadow: 0 1px 0 #fff, inset 0 0 2px #3f4c6b, inset 0 1px 0 #d7dee3, inset 0 1px 5px #d7dee3;
+	     -o-box-shadow: 0 1px 0 #fff, inset 0 0 2px #3f4c6b, inset 0 1px 0 #d7dee3, inset 0 1px 5px #d7dee3;
+	-webkit-box-shadow: 0 1px 0 #fff, inset 0 0 2px #d7dee3, inset 0 1px 0 #d7dee3, inset 0 1px 5px #d7dee3;
+	        box-shadow: 0 1px 0 #fff, inset 0 0 2px #d7dee3, inset 0 1px 0 #d7dee3, inset 0 1px 5px #d7dee3;
+	
+	display: block;
+	float: left;
+	height: 16px;
+	position: relative;
+	width: 40px;
+}
+
+.toggle-bg input{
+	height: 28px;
+	left: 0;
+	margin: 0;
+	opacity: 0;
+	padding: 0;
+	position: absolute;
+	top: -10px;
+	width: 50px;
+	z-index: 2;
+}
+
+.switch{
+	background: #ffffff;
+	background: -moz-radial-gradient(center, ellipse cover, #ffffff 0%, #fefefe 50%, #fdfdfd 51%, #ffffff 100%);
+	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,#ffffff), color-stop(50%,#fefefe), color-stop(51%,#fdfdfd), color-stop(100%,#ffffff));
+	background: -webkit-radial-gradient(center, ellipse cover, #ffffff 0%,#fefefe 50%,#fdfdfd 51%,#ffffff 100%);
+	background: -o-radial-gradient(center, ellipse cover, #ffffff 0%,#fefefe 50%,#fdfdfd 51%,#ffffff 100%);
+	background: -ms-radial-gradient(center, ellipse cover, #ffffff 0%,#fefefe 50%,#fdfdfd 51%,#ffffff 100%);
+	background: radial-gradient(ellipse at center, #ffffff 0%,#fefefe 50%,#fdfdfd 51%,#ffffff 100%);
+
+	 -khtml-border-radius: 10px;
+	   -moz-border-radius: 10px;
+	    -ms-border-radius: 10px;
+	     -o-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	        border-radius: 10px;
+	
+	
+	 -khtml-box-shadow: 0 1px 1px #65727b, 0 0 1px #b6bdc2;
+	   -moz-box-shadow: 0 1px 1px #65727b, 0 0 1px #b6bdc2;
+	    -ms-box-shadow: 0 1px 1px #65727b, 0 0 1px #b6bdc2;
+	     -o-box-shadow: 0 1px 1px #65727b, 0 0 1px #b6bdc2;
+	-webkit-box-shadow: 0 1px 1px #65727b, 0 0 1px #b6bdc2;
+	        box-shadow: 0 1px 1px #65727b, 0 0 1px #b6bdc2;
+	
+	display: block;
+	float: left;
+	height: 20px;
+	left: -1px;
+	position: relative;
+	top: -2px;
+	
+	 -khtml-transition: left .2s ease;
+	   -moz-transition: left .2s ease;
+	    -ms-transition: left .2s ease;
+	     -o-transition: left .2s ease;
+	-webkit-transition: left .2s ease;
+	        transition: left .2s ease;
+	
+	width: 20px;
+	z-index: 1;
+}
+
+.toggle-bg input:checked~.switch{left: -1px;}
+
+.toggle-bg input~:checked~.switch{left: 30px;}
+
+.toggle-bg input:checked{z-index: 0;}
+
